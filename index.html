@@ -3,20 +3,45 @@
   <head>
       <title>Clock Tower</title>
       <meta charset="utf-8">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-
-      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Copse" rel="stylesheet">
       <link href="index.css" media="screen" rel="stylesheet" type="text/css"/>
   </head>
 
   <body>
-      <div id='clock' class="d-flex justify-content-between alight-items-center"></div>
+    <main>
+      <div class="jumbotron">
+        <h1 class="text-center">World Clock</h1>
+      </div>
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-6">
+            <h2>Seattle</h2>
+            <div id='seattle'></div>
+          </div>
+          <div class="col-md-6">
+            <h2>Taipei</h2>
+            <div id='taipei'></div>
+          </div>
+        </div>
+        <div class="row h-50">
+          <div class="col-md-6">
+            <h2>Calgary</h2>
+            <div id='calgary'></div>
+          </div>
+          <div class="col-md-6">
+            <h2>Greece</h2>
+            <div id='greece'></div>
+          </div>
+        </div>
+      </div>
+    </main>
 
-      <script
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-      <script src="index.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script src="index.js"></script>
   </body>
 </html>
