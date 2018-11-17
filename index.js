@@ -3,30 +3,49 @@ const week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
 const month = ["January", "February", "March", "April", "May", "June",
 "July", "August", "September", "October", "November", "December"]
 
-const hours = function hours(today) {
-  return (today.getHours()<10?'0':'') + today.getHours();
-}
+let optionsOne = {
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit',
+  hour12: false,
+};
 
-const minutes = function minutes(today) {
-  return (today.getMinutes()<10?'0':'') + today.getMinutes();
-}
+let optionsTwo = {
+  weekday: 'short',
+  month: 'short',
+  day: '2-digit',
+  year: 'numeric'
+};
 
-const seconds = function seconds(today) {
-  return (today.getSeconds()<10?'0':'') + today.getSeconds();
-}
+const clock = function clock(location) {
+  switch(location) {
+    case '#taipei': {
+      optionsOne.timeZone = optionsTwo.timeZone = 'Asia/Taipei';
+      break;
+    }
+    case '#greece': {
+      optionsOne.timeZone = optionsTwo.timeZone = 'Europe/Athens';
+      break;
+    }
+    case '#calgary':{
+      optionsOne.timeZone = optionsTwo.timeZone = 'America/Edmonton';
+      break;
+    }
+    default: {
+      optionsOne.timeZone = optionsTwo.timeZone = 'America/Los_Angeles';
+    }
+  }
 
-const dayDetails = function dayDetails(today) {
-  $('#seattle').append('<p>[' + week[today.getDay() - 1] + "]" + '</p>');
-  $('#seattle').append('<p>' + month[today.getMonth() + 1] + " " + today.getDate() + ", " + today.getFullYear() + '</p>');
-}
+  let today = new Date();
 
-const clock = function clock() {
-  const today = new Date();
-  $('#seattle').empty();
-  $('#seattle').append('<h1>' + hours(today) + ":" + minutes(today) + ":" + seconds(today) + '</h1>');
-  $('#seattle').append(dayDetails(today));
+  $(location).empty();
+  $(location).append('<h2>' + today.toLocaleString('en-US', optionsOne) + '</h2>');
+  $(location).append('<h2>[' + today.toLocaleString('en-US', optionsTwo) + ']</h2>');
 }
 
 $( document ).ready(function() {
-  setInterval(() => clock(), 1000);
+  setInterval(() => clock('#seattle'), 1000);
+  setInterval(() => clock('#taipei'), 1000);
+  setInterval(() => clock("#greece"), 1000);
+  setInterval(() => clock("#calgary"), 1000);
 })
