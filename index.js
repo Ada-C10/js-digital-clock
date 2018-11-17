@@ -26,16 +26,17 @@ $(document).ready(function() {
 
     let fullTime =
       $(`<h4>${hour}:${min} ${dayNight}</h4>
-      <h6>${dayName} ${monthName} ${day}, ${year}</h6>
-      <br>
-      <h6>Jakarta</h6>
-      <h6>${date.toLocaleString('en-US', { timeZone: 'Asia/Jakarta' })}</h6>
-      <h6>London</h6>
-      <h6>${date.toLocaleString('en-US', { timeZone: 'Europe/London' })}</h6>
-      <h6>Sydney</h6>
-      <h6>${date.toLocaleString('en-US', { timeZone: 'Australia/Sydney' })}</h6>`)
+      <h6>${dayName} ${monthName} ${day}, ${year}</h6>`)
+    let otherCountries =
+      $(`<div><h6>Jakarta</h6>
+      <h6>${date.toLocaleString('en-US', { timeZone: 'Asia/Jakarta' })}</h6></div>
+      <div><h6>London</h6>
+      <h6>${date.toLocaleString('en-US', { timeZone: 'Europe/London' })}</h6></div>
+      <div><h6>Sydney</h6>
+      <h6>${date.toLocaleString('en-US', { timeZone: 'Australia/Sydney' })}</h6></div>`)
 
     $('#clock').empty().append(fullTime);
+    $('#timezones').empty().append(otherCountries)
   };
 
   // $('#clock').append(currentTime())
