@@ -7,7 +7,7 @@ $(document).ready(() => {
     let hour = date.getHours();
     let minute = date.getMinutes();
     let second = date.getSeconds();
-    let position = "AM"
+    let position = "AM";
 
     if(hour == 0){
       hour = 12;
@@ -15,7 +15,7 @@ $(document).ready(() => {
 
     if(hour > 12){
       hour = hour - 12;
-      position = "PM"
+      position = "PM";
     }
 
     hour = (hour < 10) ? "0" + hour : hour;
