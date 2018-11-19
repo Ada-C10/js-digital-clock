@@ -4,7 +4,7 @@ $(document).ready( () => {
     const time = new Date();
     const seconds = time.getSeconds();
     const minutes = time.getMinutes();
-    const hours = time.getHours() - 12;
+    const hours = time.getHours();
 
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
@@ -20,6 +20,6 @@ $(document).ready( () => {
 
   let intervalID = setInterval(timeSet, 1000);
 
-  intervalID();
+  intervalID;
 
 });
