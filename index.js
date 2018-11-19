@@ -1,18 +1,19 @@
-const clockElement = $('#clock')
+$(document).ready(() => {
 
-const updateClock = function updateClock(){
-  const justNow = new Date(Date.now());
+  const clockElement = $('#clock');
 
-  const hours = justNow.getHours() < 10 ? "0" + justNow.getHours() : justNow.getHours();
-  const mins = justNow.getMinutes() < 10 ? "0" + justNow.getMinutes() : justNow.getMinutes();
-  const secs = justNow.getSeconds() < 10 ? "0" + justNow.getSeconds() : justNow.getSeconds();
+  const updateClock = () => {
+    const justNow = new Date(Date.now());
 
-  clockElement.html(`<p>${justNow.toDateString()} </p>
-  <p>${hours}:${mins}:${secs}</p>`);
-};
+    const hours = justNow.getHours() < 10 ? "0" + justNow.getHours() : justNow.getHours();
+    const mins = justNow.getMinutes() < 10 ? "0" + justNow.getMinutes() : justNow.getMinutes();
+    const secs = justNow.getSeconds() < 10 ? "0" + justNow.getSeconds() : justNow.getSeconds();
 
-const tickSite = window.setInterval(updateClock, 1000);
+    clockElement.html(`
+      <p>${justNow.toDateString()}</p>
+      <p>${hours}:${mins}:${secs}</p>
+    `);
+  };
 
-$(document).ready(function(){
-  tickSite;
+  window.setInterval(updateClock, 1000);
 });
