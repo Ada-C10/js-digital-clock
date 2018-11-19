@@ -4,11 +4,6 @@ body {
 }
 
 #seattle, #taipei, #greece, #calgary {
-  /* height: 100px;
-  margin: auto;
-  top: 0; left: 0; bottom: 0; right: 0; */
-  text-align: center;
-  color: white;
   font-size: 100px;
 }
 
@@ -22,7 +17,46 @@ p {
 }
 
 .row {
-  /* border: 1px solid black; */
   height: 32vh;
   text-align: center;
+}
+
+.white {
+  color: white;
+}
+
+.tomato {
+  color: tomato;
+}
+
+.goldenrod {
+  color: goldenrod;
+}
+
+.navy {
+  color: navy;
+}
+
+.copse {
+  font-family: 'Copse', serif;
+}
+
+.allerta {
+  font-family: 'Allerta Stencil', sans-serif;
+}
+
+.crimson {
+  font-family: 'Crimson Text', serif;
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
 }
