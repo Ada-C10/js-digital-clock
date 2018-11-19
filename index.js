@@ -1,3 +1,12 @@
+const setupButtons = () => {
+  $('button').click(function() {
+    const colorClass = $(this).className;
+    console.log(`You clicked on the ${colorClass} button`);
+    $('#clock').removeClass();
+    $('#clock').addClass(colorClass);
+  });
+};
+
 $(document).ready(() => {
 
   const clockElement = $('#clock');
@@ -16,4 +25,6 @@ $(document).ready(() => {
   };
 
   window.setInterval(updateClock, 1000);
+
+  setupButtons();
 });
