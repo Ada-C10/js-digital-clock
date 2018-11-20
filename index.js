@@ -2,7 +2,7 @@ let optionsOne = {
   hour: '2-digit',
   minute: '2-digit',
   second: '2-digit',
-  hour12: false,
+  hour12: false
 };
 
 let optionsTwo = {
@@ -39,68 +39,43 @@ const clock = function clock(location) {
 }
 
 $( document ).ready(function() {
-  setInterval(() => clock('#seattle'), 1000);
+  setInterval(() => clock('#seattle'), 1000); // try setInterval(clock, #seattle, 1000)
   setInterval(() => clock('#taipei'), 1000);
   setInterval(() => clock("#greece"), 1000);
   setInterval(() => clock("#calgary"), 1000);
 
-  $('#btnOne').on('click', function() {
+  $('#buttons').on('click', function(event) {
     const target = $('.clockDetails');
-    target.removeClass("white navy goldenrod");
-    target.toggleClass('tomato');
+    if (event.target.innerText === "Tomato") {
+      target.removeClass("white navy goldenrod");
+      target.addClass('tomato');
+    } else if (event.target.innerText === "Golden Rod") {
+      target.removeClass("white tomato navy");
+      target.addClass('goldenrod');
+    } else if (event.target.innerText === "Navy") {
+      target.removeClass("white tomato goldenrod");
+      target.addClass('navy');
+    } else if (event.target.innerText === "Original") {
+      target.removeClass("tomato goldenrod navy");
+      target.addClass('white');
+    } else if (event.target.innerText === "left") {
+      target.removeClass("right center");
+      target.addClass('left');
+    } else if (event.target.innerText === "right") {
+      target.removeClass("left center");
+      target.addClass('right');
+    } else if (event.target.innerText === "center") {
+      target.removeClass("left right");
+      target.addClass('center');
+    } else if (event.target.innerText === "Allerta") {
+      target.removeClass("copse crimson");
+      target.addClass('allerta');
+    } else if (event.target.innerText === "Copse") {
+      target.removeClass("allerta crimson");
+      target.addClass('copse');
+    } else if (event.target.innerText === "Crimson") {
+      target.removeClass("allerta copse");
+      target.addClass('crimson');
+    }
   });
-
-  $('#btnTwo').on('click', function() {
-    const target = $('.clockDetails');
-    target.removeClass("white tomato navy");
-    target.toggleClass('goldenrod');
-  });
-
-  $('#btnThree').on('click', function() {
-    const target = $('.clockDetails');
-    target.removeClass("white tomato goldenrod");
-    target.toggleClass('navy');
-  });
-
-  $('#btnFour').on('click', function() {
-    const target = $('.clockDetails');
-    target.removeClass("tomato goldenrod navy");
-    target.toggleClass('white');
-  });
-
-  $('#btnLeft').on('click', function() {
-    const target = $('.clockDetails');
-    target.removeClass("right center");
-    target.toggleClass('left');
-  });
-
-  $('#btnRight').on('click', function() {
-    const target = $('.clockDetails');
-    target.removeClass("left center");
-    target.toggleClass('right');
-  });
-
-  $('#btnCenter').on('click', function() {
-    const target = $('.clockDetails');
-    target.removeClass("left right");
-    target.toggleClass('center');
-  });
-
-  $('#btnAllerta').on('click', function() {
-    const target = $('.clockDetails');
-    target.removeClass("copse crimson");
-    target.toggleClass('allerta');
-  });
-
-  $('#btnCopse').on('click', function() {
-    const target = $('.clockDetails');
-    target.removeClass("allerta crimson");
-    target.toggleClass('copse');
-  });
-
-  $('#btnCrimson').on('click', function() {
-    const target = $('.clockDetails');
-    target.removeClass("allerta copse");
-    target.toggleClass('crimson');
-  });
-})
+});

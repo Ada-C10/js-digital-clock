@@ -16,6 +16,11 @@ p {
   font-size: 25px;
 }
 
+.clockDetails {
+  color: white;
+  text-align: center;
+}
+
 .row {
   height: 32vh;
   text-align: center;
