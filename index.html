@@ -3,12 +3,57 @@
   <head>
       <title>Clock Tower</title>
       <meta charset="utf-8">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Copse|Crimson+Text" rel="stylesheet">
       <link href="index.css" media="screen" rel="stylesheet" type="text/css"/>
   </head>
 
   <body>
-      <div id='clock'></div>
+    <main>
+      <div class="jumbotron">
+        <h1 class="text-center">World Clock</h1>
+        <div class="text-center" id="buttons">
+          <button class="btn">Tomato</button>
+          <button class="btn">Golden Rod</button>
+          <button class="btn">Navy</button>
+          <button class="btn">Original</button>
+          //
+          <button class="btn">left</button>
+          <button class="btn">center</button>
+          <button class="btn">right</button>
+          //
+          <button class="btn">Allerta</button>
+          <button class="btn">Crimson</button>
+          <button class="btn">Copse</button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-6">
+            <h2><u>Seattle</u></h2>
+            <div id='seattle' class="clockDetails"></div>
+          </div>
+          <div class="col-md-6">
+            <h2><u>Taipei</u></h2>
+            <div id='taipei' class="clockDetails"></div>
+          </div>
+        </div>
+        <div class="row h-50">
+          <div class="col-md-6">
+            <h2><u>Calgary</u></h2>
+            <div id='calgary' class="clockDetails"></div>
+          </div>
+          <div class="col-md-6">
+            <h2><u>Greece</u></h2>
+            <div id='greece' class="clockDetails"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
   </body>
 </html>
-
-<script src="index.js"></script>
